@@ -7,17 +7,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
-
-// import { fetchContacts } from 'redux/operations';
-// import { fetchContacts } from 'redux/contacts/operations';
-
-// import { ContactForm } from './ContactForm/ContactForm';
-// import ContactList from './ContactList/ContactList';
-// import { Filter } from './Filter/Filter';
-// import { selectError, selectLoading } from 'redux/selectors';
-// import { selectError } from 'redux/contacts/selectors';
-
-// import css from './App.module.css';
+import { Layout } from './Layout';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -26,7 +16,6 @@ const ContactPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  // const isLoading = useSelector(selectLoading);
   const { isRefreshing } = useAuth();
 
   useEffect(() => {
@@ -37,7 +26,7 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Routes>
-      <Route path="/goit-react-hw-08-phonebook">
+      <Route path="/goit-react-hw-08-phonebook" element={<Layout />}>
         <Route index element={<HomePage />}></Route>
         <Route
           path="/goit-react-hw-08-phonebook/register"
