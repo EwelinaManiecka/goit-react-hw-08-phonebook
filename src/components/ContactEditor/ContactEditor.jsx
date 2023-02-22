@@ -2,7 +2,8 @@ import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
 // import { addContact } from 'redux/contacts/operations';
 // import { addContact } from 'redux/contacts/operations';
-import css from './ContactEditor.module.css';
+// import css from './ContactEditor.module.css';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 
 export const ContactEditor = () => {
   const dispatch = useDispatch();
@@ -20,11 +21,12 @@ export const ContactEditor = () => {
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
-      <input className={css.input} name="text"></input>
-      <button className={css.button} type="submit">
-        Add contact
-      </button>
-    </form>
+    <ContactForm />
+    // <form className={css.form} onSubmit={handleSubmit}>
+    //   <input className={css.input} name="text"></input>
+    //   <button className={css.button} type="submit">
+    //     Add contact
+    //   </button>
+    // </form>
   );
 };
