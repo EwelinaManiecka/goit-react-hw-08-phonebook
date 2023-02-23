@@ -5,7 +5,7 @@ import { Notification } from 'components/Notification/Notification';
 import { Contact } from 'components/Contact/Contact';
 import css from './ContactList.module.css';
 
-// import { selectFilter } from 'redux/selectors';
+import { selectFilter } from 'redux/selectors';
 // import { selectContacts } from 'redux/selectors';
 import { selectVisibleContacts } from 'redux/selectors';
 // import { selectFilter } from 'redux/contacts/selectors';
@@ -14,7 +14,7 @@ import { selectVisibleContacts } from 'redux/selectors';
 
 const ContactList = () => {
   // const contacts = useSelector(selectContacts);
-  // const filter = useSelector(selectFilter);
+  const filter = useSelector(selectFilter);
   const filteredContacts = useSelector(selectVisibleContacts);
 
   return (
@@ -22,9 +22,9 @@ const ContactList = () => {
       {filteredContacts.length > 0 ? (
         <ul className={css.list}>
           {filteredContacts
-            // .filter(contact =>
-            //   contact.name.toLowerCase().includes(filter.toLowerCase())
-            // )
+            .filter(contact =>
+              contact.name.toLowerCase().includes(filter.toLowerCase())
+            )
             .map(contact => {
               return (
                 <li className={css.item} key={contact.id}>
