@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/266.8b29a396.chunk.js","mappings":"kMAAe,SAASA,IACtB,OACE,0BACE,4DAGL,C","sources":["pages/Home.js"],"sourcesContent":["export default function Home() {\n  return (\n    <div>\n      <h1>Contact manager, welcome page </h1>\n    </div>\n  );\n}\n"],"names":["Home"],"sourceRoot":""}
