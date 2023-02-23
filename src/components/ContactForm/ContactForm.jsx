@@ -51,7 +51,7 @@ export const ContactForm = () => {
     dispatch(addContact(newContact));
     form.reset();
   };
-  console.log(contacts);
+  // console.log(contacts);
   return (
     <div className={css.container}>
       <form onSubmit={formSumbit}>
