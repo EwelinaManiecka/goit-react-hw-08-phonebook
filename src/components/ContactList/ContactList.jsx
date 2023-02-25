@@ -6,14 +6,9 @@ import { Contact } from 'components/Contact/Contact';
 import css from './ContactList.module.css';
 
 import { selectFilter } from 'redux/selectors';
-// import { selectContacts } from 'redux/selectors';
 import { selectVisibleContacts } from 'redux/selectors';
-// import { selectFilter } from 'redux/contacts/selectors';
-// import { selectContacts } from 'redux/contacts/selectors';
-// import { selectVisibleContacts } from 'redux/contacts/selectors';
 
 const ContactList = () => {
-  // const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
   const filteredContacts = useSelector(selectVisibleContacts);
 

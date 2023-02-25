@@ -1,15 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-// import { addContact } from 'redux/contactsSlice';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 
 import { addContact } from 'redux/operations';
-// import { addContact } from 'redux/contacts/operations';
 import css from './ContactForm.module.css';
 import { nanoid } from '@reduxjs/toolkit';
 import { selectContacts } from 'redux/selectors';
-// import { selectContacts } from 'redux/contacts/selectors';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -51,7 +48,6 @@ export const ContactForm = () => {
     dispatch(addContact(newContact));
     form.reset();
   };
-  // console.log(contacts);
   return (
     <div className={css.container}>
       <form onSubmit={formSumbit}>
