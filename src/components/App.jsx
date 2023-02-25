@@ -26,33 +26,27 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Routes>
-      <Route path="/goit-react-hw-08-phonebook" element={<Layout />}>
+      <Route path="" element={<Layout />}>
         <Route index element={<HomePage />}></Route>
         <Route
-          path="/goit-react-hw-08-phonebook/register"
+          path="/register"
           element={
             <RestrictedRoute
-              redirectTo="/goit-react-hw-08-phonebook/contacts"
+              redirectTo="/contacts"
               component={<RegisterPage />}
             />
           }
         ></Route>
         <Route
-          path="/goit-react-hw-08-phonebook/login"
+          path="/login"
           element={
-            <RestrictedRoute
-              redirectTo="/goit-react-hw-08-phonebook/contacts"
-              component={<LoginPage />}
-            />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         ></Route>
         <Route
-          path="/goit-react-hw-08-phonebook/contacts"
+          path="/contacts"
           element={
-            <PrivateRoute
-              redirectTo="/goit-react-hw-08-phonebook/login"
-              component={<ContactPage />}
-            />
+            <PrivateRoute redirectTo="/login" component={<ContactPage />} />
           }
         ></Route>
       </Route>
