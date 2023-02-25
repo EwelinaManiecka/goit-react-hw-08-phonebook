@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useEffect, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { PrivateRoute } from './PrivateRoute';
-import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './Routes/PrivateRoute';
+import { RestrictedRoute } from './Routes/RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { Layout } from './Layout';
